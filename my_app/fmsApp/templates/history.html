@@ -1,0 +1,98 @@
+{% extends "base.html" %} {% load humanize %} {% load customfilter %} {% block pageContent %}
+<!-- <table>
+    <thead>
+        <tr>
+            <th>File Title</th>
+            <th>History Date</th>
+            <th>History Action</th>
+            <th>History User</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in object_list %}
+        <tr>
+            <td>{{ t.title }}</td>
+            <td>{{ t.history_date }}</td>
+            <td>{{ t.get_history_type_display }}</td>
+            <td>{{ t.history_user }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> -->
+
+<!--Section: Content-->
+<section class="">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card card-default border rounded-0 shadow">
+                <div class="card-header">
+                    <h4 class="card-title"><b>History of Department File</b></h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered" id="file-table">
+                        <colgroup>
+                            <col width="5%">
+                            <col width="20%">
+                            <col width="40%">
+                            <col width="20%">
+                            <col width="15%">
+                        </colgroup>
+                        <thead>
+                            <tr class="bg-gradient bg-dark bg-opacity-30 text-light">
+                                <th class="px-2 py-2 text-center">#</th>
+                                <th class="px-2 py-2 text-center">Title</th>
+                                <th class="px-2 py-2 text-center">Time</th>
+                                <th class="px-2 py-2 text-center">Action</th>
+                                <th class="px-2 py-2 text-center">User</th>
+                                <!-- <th class=text-center>History</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for t in object_list %}
+                            <tr>
+                                <td class="px-2 py-1 text-center">{{ forloop.counter }}</td>
+                                <td class="px-2 py-2 text-start">{{ t.title }}</td>
+                                <td class="px-2 py-2 text-start">{{ t.history_date }}</td>
+                                <td class="px-2 py-2 text-start">{{ t.get_history_type_display }}</td>
+                                <td class="px-2 py-2 text-start">{{ t.history_user }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div> {% endblock pageContent %} {% block ScriptBlock %}
+<script>
+    $(function() {
+        $('#file-table').find('td, th').addClass('align-middle px-2 py-1 text-sm')
+        $('.copy-link').click(function() {
+            var input = $('<input class="clip-text">')
+            input.val($(this).attr('data-url'))
+            $('main').append(input)
+            input[0].select()
+            input[0].setSelectionRange(0, (input.val()).length)
+            var copy = document.execCommand('copy')
+            if (copy) {
+                alert("Link Copied to Clipboard")
+            }
+            setTimeout(function() {
+                input.remove()
+            }, 300)
+        })
+        $('.edit-data').click(function() {
+            uni_modal('<i class="fa fa-edit"></i> Edit post', '{% url "manage-post" %}/' + $(this).attr('data-id'), 'modal-md')
+        })
+        $('#file-table').dataTable({
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            "pageLength": 25
+        })
+    })
+</script>
+{% endblock ScriptBlock %}
