@@ -12,3 +12,12 @@
 ## UI Design 
 
 ## System Architecture
+
+## Application Implementation
+Database
+-SQlite:
+  -user、files
+-Model:
+  -user 、title 、description、filepath、date_created、date_updated
+-View:
+  -home、register_user、manage_post、delete / save post、history data、public、update pass word
