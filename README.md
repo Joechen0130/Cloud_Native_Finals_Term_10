@@ -45,6 +45,8 @@ Database
 docker-compose -f docker-compose.yml up
 ```
 ## Grafana Setting
+![image](https://github.com/Joechen0130/Cloud_Native_Finals_Term_10/assets/62683955/33de0a19-a536-49a8-80aa-2daea7807480)
+![image](https://github.com/Joechen0130/Cloud_Native_Finals_Term_10/assets/62683955/907ecc85-ded5-41cd-9898-535ac51fe39d)
 
  
 
