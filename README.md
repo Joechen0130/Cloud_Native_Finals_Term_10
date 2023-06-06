@@ -40,6 +40,13 @@ Database
   - Delete file test
   - Change file test
  
+## Run the code
+```
+docker-compose -f docker-compose.yml up
+```
+## Grafana Setting
+
+ 
 
 
 
