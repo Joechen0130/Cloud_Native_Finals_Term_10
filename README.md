@@ -40,7 +40,7 @@ Database
   - Delete file test
   - Change file test
 
-- User register
+- User register (We will recommand yiy guys to create your own account)
   - First name 、 Last name 、 Your email
   - Account name
   - Password
