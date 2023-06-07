@@ -39,6 +39,17 @@ Database
   - Upload file test
   - Delete file test
   - Change file test
+
+- User register
+  - First name 、 Last name 、 Your email
+  - Account name
+  - Password
+  - Group: 1-3 assume for three department
+- Built in USER
+  - Name: user1
+  - Password: hellouser1
+  - Name: user2
+  - Password: hellouser2
  
 ## Run the code
 ```
